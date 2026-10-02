@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bacchawww 💌</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    background:linear-gradient(135deg,#fff4f8,#f3f0ff,#eefaff);
+    color:#665c70;
+    overflow-x:hidden;
+}
+
+.screen{
+    display:none;
+    min-height:100vh;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+}
+
+.screen.active{
+    display:flex;
+}
+
+.card{
+    width:100%;
+    max-width:700px;
+    padding:35px 25px;
+    text-align:center;
+
+    background:rgba(255,255,255,0.75);
+    backdrop-filter:blur(15px);
+
+    border:2px solid rgba(255,255,255,0.9);
+    border-radius:35px;
+
+    box-shadow:0 20px 60px rgba(150,120,170,0.18);
+
+    animation:appear .6s ease;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(20px) scale(.97);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+}
+
+.script{
+    font-family:'Pacifico',cursive;
+    color:#bd83a8;
+}
+
+h1{
+    font-size:clamp(28px,7vw,48px);
+    line-height:1.25;
+    margin:15px 0;
+}
+
+h2{
+    font-size:28px;
+    margin:15px 0;
+}
+
+p{
+    line-height:1.8;
+}
+
+.bigEmoji{
+    font-size:80px;
+    animation:float 2s ease-in-out infinite;
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-10px);
+    }
+}
+
+/* BUTTONS */
+
+button{
+    border:none;
+    padding:13px 25px;
+    margin:8px;
+    border-radius:50px;
+
+    font-family:inherit;
+    font-size:15px;
+    font-weight:600;
+
+    cursor:pointer;
+
+    color:#685b69;
+    background:#f3d9e8;
+
+    box-shadow:0 8px 20px rgba(120,90,130,.12);
+
+    transition:.25s;
+}
+
+button:hover{
+    transform:translateY(-3px) scale(1.03);
+}
+
+.yes{
+    background:#dcefdc;
+}
+
+.no{
+    background:#f6d4dc;
+}
+
+/* BOUQUETS */
+
+.bouquets{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:25px;
+}
+
+.bouquet{
+    padding:20px 10px;
+    border-radius:25px;
+
+    background:#fff9fc;
+    border:2px solid #f3dfeb;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.bouquet:hover{
+    transform:translateY(-7px) rotate(-1deg);
+    box-shadow:0 12px 30px rgba(160,120,150,.15);
+}
+
+.bouquet span{
+    display:block;
+    font-size:65px;
+}
+
+.bouquet small{
+    color:#9a8395;
+}
+
+/* MESSAGE */
+
+.message{
+    text-align:left;
+
+    background:#fffafd;
+
+    border:2px solid #f2e1ec;
+    border-radius:25px;
+
+    padding:22px;
+
+    line-height:1.8;
+
+    max-height:55vh;
+    overflow-y:auto;
+
+    white-space:pre-wrap;
+}
+
+/* PHOTOS */
+
+.photos{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+    margin:25px 0;
+}
+
+.photo{
+    height:220px;
+    border-radius:25px;
+    overflow:hidden;
+
+    background:#f9e8f1;
+
+    border:6px solid white;
+
+    box-shadow:0 10px 25px rgba(130,100,140,.15);
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.finalHeart{
+    font-size:85px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px){
+
+    .bouquets{
+        grid-template-columns:1fr;
+    }
+
+    .photos{
+        grid-template-columns:1fr;
+    }
+
+    .card{
+        padding:30px 17px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- ================= FIRST SCREEN ================= -->
+
+<section class="screen active" id="home">
+
+<div class="card">
+
+    <div class="bigEmoji">💌</div>
+
+    <div class="script" style="font-size:26px;">
+        Bacchawww
+    </div>
+
+    <h1>
+        Happy boyfriend's day my babyyyy...<br>
+        I love you so much
+    </h1>
+
+    <p>
+        I made a tiny little something for youuu 🫠✨
+    </p>
+
+    <button onclick="showScreen('gift')">
+        open ittt ♡
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= GIFT QUESTION ================= -->
+
+<section class="screen" id="gift">
+
+<div class="card">
+
+    <div class="bigEmoji">🎁</div>
+
+    <h2>
+        You want some gifts...
+    </h2>
+
+    <button class="yes" onclick="showScreen('bouquets')">
+        YES ♡
+    </button>
+
+    <button class="no" onclick="showScreen('no')">
+        NO 😭
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= NO SCREEN ================= -->
+
+<section class="screen" id="no">
+
+<div class="card">
+
+    <div class="bigEmoji">😿</div>
+
+    <h1>
+        how could you
+    </h1>
+
+    <p>
+        after all this effort??? 😭
+    </p>
+
+    <button onclick="showScreen('gift')">
+        try again 😾
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= BOUQUETS ================= -->
+
+<section class="screen" id="bouquets">
+
+<div class="card">
+
+    <div class="script" style="font-size:25px;">
+        Bacchawww's little gift corner
+    </div>
+
+    <h2>
+        click onnn itttt 💐
+    </h2>
+
+    <div class="bouquets">
+
+        <div class="bouquet" onclick="openMessage(1)">
+            <span>💐</span>
+            <small>bouquet one</small>
+        </div>
+
+        <div class="bouquet" onclick="openMessage(2)">
+            <span>🌷</span>
+            <small>bouquet two</small>
+        </div>
+
+        <div class="bouquet" onclick="openMessage(3)">
+            <span>🌸</span>
+            <small>bouquet three</small>
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= MESSAGE ================= -->
+
+<section class="screen" id="message">
+
+<div class="card">
+
+    <div class="script">
+        for you, bbyyy ♡
+    </div>
+
+    <h2 id="messageTitle">
+        a little message
+    </h2>
+
+    <div class="message" id="messageText"></div>
+
+    <button onclick="showScreen('photos')">
+        one more thinggg → 
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PHOTOS ================= -->
+
+<section class="screen" id="photos">
+
+<div class="card">
+
+    <div class="script" style="font-size:26px;">
+        our little scrapbook ♡
+    </div>
+
+    <h2>
+        some little memories 🫠
+    </h2>
+
+    <div class="photos">
+
+        <!-- CHANGE THESE FILE NAMES TO YOUR ACTUAL PHOTO NAMES -->
+
+        <div class="photo">
+            <img src="us1.jpg" alt="memory">
+        </div>
+
+        <div class="photo">
+            <img src="us2.jpg" alt="memory">
+        </div>
+
+        <div class="photo">
+            <img src="us3.jpg" alt="memory">
+        </div>
+
+        <div class="photo">
+            <img src="us4.jpg" alt="memory">
+        </div>
+
+        <div class="photo">
+            <img src="us5.jpg" alt="memory">
+        </div>
+
+    </div>
+
+    <button onclick="showScreen('final')">
+        keep goinggg 🫠
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= FINAL SCREEN ================= -->
+
+<section class="screen" id="final">
+
+<div class="card">
+
+    <div class="finalHeart">
+        🫶🏻
+    </div>
+
+    <div class="script" style="font-size:30px;">
+        Bacchawww
+    </div>
+
+    <h1>
+        Happy Boyfriend's Dayyy ♡
+    </h1>
+
+    <p>
+        Thank you for being you, for being annoying,
+        for making me blush, and for somehow becoming
+        such a huge part of my days.
+    </p>
+
+    <br>
+
+    <p>
+        <b>
+            I love you so muchhh 🫠✨
+        </b>
+    </p>
+
+    <button onclick="showScreen('home')">
+        start again hehe ♡
+    </button>
+
+</div>
+
+</section>
+
+
+
+<script>
+
+/* ================= SCREEN CHANGING ================= */
+
+function showScreen(id){
+
+    document.querySelectorAll('.screen').forEach(function(screen){
+
+        screen.classList.remove('active');
+
+    });
+
+    document.getElementById(id).classList.add('active');
+
+    window.scrollTo(0,0);
+}
+
+
+
+/* ================= YOUR THREE MESSAGES ================= */
+
+const messages = {
+
+1: `I love you bbyyy... Hehe... HAPPY BOYFRIEND'S DAYYYYYYY... WUIIII... Yk how much I love youu ??? You don't naaa... Ikr... You don't love me.... Well I love a lot... Maybe that much that I can literally do anything just for you to stay... You never have to hide anything from me... You can say me... I'll never get bored of listening same story for 20th time... But I want to listen... I love a lot bbyyy... 🫠✨`,
+
+2: `It's bf day ryt... Now promise me you'll never leavee me... You'll never hide anything from me... You never have to face anything aloneee... Promise me bby... You'll always come to me when everything feels heavy... Okieee... Ilysmm... Maybe until the scientist find the end of the universe 🫠✨`,
+
+3: `You are genuinely one of the most annoying people I've ever met 😭 because WHY don't you understand my hints??? Like I'll literally be standing there giving you the most obvious hint ever and you'll still sit there like 🙂. And then somehow, after annoying me this much, you have the audacity to make me blush so hard that I forget why I was even angry at you. I pretend I don't like it when you're being all cute and stupid, but we both know I secretly love it 😾. My first impression of you was literally “is he dumb?” and look at me now... absolutely obsessed with the same dumb boy. I knew I'd fallen way too hard when I started waiting for just ONE text from you and getting genuinely emotional when you replied late. Like hello??? Since when did your one notification become capable of controlling my entire mood 😭. I started missing you the second you leave, I started writing pink again, and somehow EVERYTHING you do gets my attention. And I'll never let you forget that you once confidently said “Kannada is the national language of Karnataka” because I still have material to bully you with 😭. You're such an idiot, but unfortunately you're MY idiot.`
+
+};
+
+
+
+/* ================= OPEN BOUQUET ================= */
+
+function openMessage(number){
+
+    document.getElementById("messageText").textContent =
+        messages[number];
+
+    if(number === 1){
+
+        document.getElementById("messageTitle").textContent =
+            "bouquet one 💐";
+
+    }
+
+    if(number === 2){
+
+        document.getElementById("messageTitle").textContent =
+            "bouquet two 🌷";
+
+    }
+
+    if(number === 3){
+
+        document.getElementById("messageTitle").textContent =
+            "bouquet three 🌸";
+
+    }
+
+    showScreen("message");
+
+}
+
+</script>
+
+
+</body>
+</html>
